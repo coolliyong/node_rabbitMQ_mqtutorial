@@ -1,11 +1,23 @@
-const simplest = require('./src/simplest/index.js')
+const simplest = require('./src/simplest.js')
+const workqueue = require('./src/workqueue/index.js')
 
-// 简单队列
+//  ------------ 简单队列 -------------
 
 // 发送消息
-simplest.send()
+// simplest.send()
 
-//接收消息
-simplest.receive(1, 100)
-// // 接受消息
-simplest.receive(2, 5000)
+// 发送消息
+simplest.receive()
+
+
+
+
+//  ------------ 工作队列 -------------
+
+// 发送消息
+// workqueue.send()
+
+// //接收消息
+// workqueue.receive(1, 100)
+// // // 接受消息
+// workqueue.receive(2, 5000)

@@ -2,10 +2,10 @@
  * @Author: liyonglong
  * @Date: 2019-10-16 20:59:54
  * @Last Modified by: liyonglong
- * @Last Modified time: 2019-10-16 22:05:11
+ * @Last Modified time: 2019-10-16 22:59:07
  */
 
-// 简单队列
+// 工作队列，任务
 const amqp = require('amqplib/callback_api')
 
 // 发送消息
@@ -28,7 +28,7 @@ module.exports.send = async function() {
         throw error1
       }
       // 3.
-      const queue = 'hello'
+      const queue = 'workqueue'
       //   // 4.
       //   const msg = 'Hello world'
 
@@ -67,13 +67,13 @@ module.exports.receive = async function(flag, time) {
       if (error1) {
         throw error1
       }
-      var queue = 'hello'
+      var queue = 'workqueue'
 
       channel.assertQueue(queue, {
         durable: false
       })
 
-      // 自动回执消息
+      // 关闭自动回执
       const opt = {
         noAck: false
       }
@@ -86,7 +86,7 @@ module.exports.receive = async function(flag, time) {
           const msgText = msg.content.toString()
           console.log(`[c${flag}]--> 接收到消息:${msgText}`)
           setTimeout(() => {
-            // 发送回执
+            // 手动发送回执
             channel.ack(msg)
             console.log(`[c${flag}] <--发送回执`)
           }, time)
