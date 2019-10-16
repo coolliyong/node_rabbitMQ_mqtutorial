@@ -2,7 +2,7 @@
  * @Author: liyonglong
  * @Date: 2019-10-16 20:59:54
  * @Last Modified by: liyonglong
- * @Last Modified time: 2019-10-16 23:05:21
+ * @Last Modified time: 2019-10-16 23:38:36
  */
 
 // 简单队列
@@ -33,6 +33,7 @@ module.exports.send = async function() {
       //   const msg = 'Hello world'
 
       channel.assertQueue(queue, {
+        // 非持久化
         durable: false
       })
       // 5.
