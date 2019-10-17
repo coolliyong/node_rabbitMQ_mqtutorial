@@ -21,6 +21,7 @@
 
 # simplest 简单队列
 
+## 简单队列模型
 !['mq简单队列'](./imgs/mq_simplest.png)
 
 一个生产者对应一个消费者
@@ -29,14 +30,14 @@
 
 - 消息生产者 `Producer`
 - 消息中间件（提供消息队列） `Queue`
-- 消费消费者 `Consuming`
+- 消费消费者 `Consumer`
 
 
 # Work Queues 工作队列/任务队列
 
 ## 工作队列模型
 
-!['任务队列'](./imgs/mq_work_queue.jpg)
+!['任务队列'](./imgs/mq_work_queue.png)
 
 工作队列（又称任务队列）的主要思想是避免立即执行资源密集型任务，而不得不等待它完成。相反，我们安排任务在以后完成。我们将任务封装 为消息并将其发送到队列。在后台运行的工作进程将弹出任务并最终执行作业。当您运行许多工作人员时，任务将在他们之间共享。
 
@@ -76,7 +77,7 @@
 - headers
 - fanout
 
-!['pubsub'](./imgs/mq_pub_sub.jpg)
+!['pubsub'](./imgs/mq_pub_sub.png)
 
 
 # Routing
@@ -87,10 +88,11 @@
 
 在`pub/sub`的基础上增加了 `routeing key`,可以选择性的接收消息
 
-!['routeing'](./imgs/mq_routeing.jpg)
+!['routeing'](./imgs/mq_routeing.png)
 
 
 # Topics
+## Topic模型
 !['topic'](./imgs/mq_topic.png)
 
 ## 特殊`routeing key`字符
@@ -99,7 +101,7 @@
 
 **`exchange` 类型必须是`topic`**
 
-!['topic'](./imgs/mq_topic.jpg)
+!['topic'](./imgs/mq_topic.png)
 
 
 
