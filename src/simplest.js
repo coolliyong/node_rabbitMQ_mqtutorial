@@ -2,7 +2,7 @@
  * @Author: liyonglong
  * @Date: 2019-10-16 20:59:54
  * @Last Modified by: liyonglong
- * @Last Modified time: 2019-10-16 23:38:36
+ * @Last Modified time: 2019-10-18 00:20:39
  */
 
 // 简单队列
@@ -69,7 +69,7 @@ module.exports.receive = async function() {
         throw error1
       }
       var queue = 'simplest'
-
+      // 声明队列
       channel.assertQueue(queue, {
         durable: false
       })

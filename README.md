@@ -43,15 +43,46 @@
 4. **每一个队列都要绑定到交换机上**
 5. **生产者发送的消息 经过交换机 到达队列 就能实现一个消息被多个消费者消费**
 
+
+大白话：  
+- 一个富人说今天给`老人`（交换类型）发`钱`（消息）  
+- 每一个 老人 带上自己的`碗`(队列)来装钱  
+
 ## x 交换机
 交换机把消息推到队列里面
 
+### 交换类型
+- direct
+- topic
+- headers
+- fanout
 
+!['pubsub'](./imgs/mq_pub_sub.jpg)
 
 
 # Routing
 
+## routeing 模型
+
+!['routeing'](./imgs/mq_routeing.png)
+
+在`pub/sub`的基础上增加了 `routeing key`,可以选择性的接收消息
+
+!['routeing'](./imgs/mq_routeing.jpg)
+
+
 # Topics
+!['topic'](./imgs/mq_topic.png)
+
+## 特殊`routeing key`字符
+- `#` （哈希）可以替代零个或多个单词。
+- `*` 可以代替一个单词。
+
+**`exchange` 类型必须是`topic`**
+
+!['topic'](./imgs/mq_topic.jpg)
+
+
 
 # RPC
 
