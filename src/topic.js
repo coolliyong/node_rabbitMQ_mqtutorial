@@ -13,7 +13,7 @@
 const amqp = require('amqplib/callback_api')
 
 module.exports.send = () => {
-  amqp.connect('amqp://106.54.31.73:5672', (err0, connection) => {
+  amqp.connect('amqp://localhost:5672', (err0, connection) => {
     if (err0) {
       throw err
     }
@@ -53,7 +53,7 @@ module.exports.send = () => {
 }
 
 module.exports.receive = () => {
-  amqp.connect('amqp://106.54.31.73:5672', (err0, connection) => {
+  amqp.connect('amqp://localhost:5672', (err0, connection) => {
     if (err0) {
       throw err
     }

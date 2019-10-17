@@ -8,7 +8,7 @@
 const amqp = require('amqplib/callback_api')
 //  发布订阅
 module.exports.send = function() {
-  amqp.connect('amqp://106.54.31.73:5672', (err0, connection) => {
+  amqp.connect('amqp://localhost:5672', (err0, connection) => {
     if (err0) {
       throw err
     }
@@ -45,7 +45,7 @@ module.exports.receive = function() {
    * 1. 。。。创建通道
    * 2. 声明交换机
    */
-  amqp.connect('amqp://106.54.31.73:5672', (err0, connect) => {
+  amqp.connect('amqp://localhost:5672', (err0, connect) => {
     if (err0) {
       throw err0
     }

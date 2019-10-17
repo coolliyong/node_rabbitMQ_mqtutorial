@@ -2,7 +2,7 @@
  * @Author: liyonglong
  * @Date: 2019-10-16 20:59:54
  * @Last Modified by: liyonglong
- * @Last Modified time: 2019-10-16 23:28:28
+ * @Last Modified time: 2019-10-18 01:15:36
  */
 
 // 简单队列
@@ -18,7 +18,7 @@ module.exports.send = async function() {
    * 5.发送消息
    */
   // 1.
-  amqp.connect('amqp://106.54.31.73:5672', function(error0, connection) {
+  amqp.connect('amqp://localhost:5672', function(error0, connection) {
     if (error0) {
       throw error0
     }
@@ -58,7 +58,7 @@ module.exports.receive = async function() {
    * 4.创建回调函数，等待消息
    */
   // 1.
-  amqp.connect('amqp://106.54.31.73:5672', function(error0, connection) {
+  amqp.connect('amqp://localhost:5672', function(error0, connection) {
     if (error0) {
       throw error0
     }
