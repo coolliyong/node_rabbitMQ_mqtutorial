@@ -3,6 +3,7 @@ const workqueue = require('./src/workqueue.js')
 const pubsub = require('./src/pubsub.js')
 const routeing = require('./src/routeing.js')
 const topic = require('./src/topic.js')
+const rpc = require('./src/rpc.js')
 
 //  ------------ 简单队列 -------------
 
@@ -45,8 +46,12 @@ const topic = require('./src/topic.js')
 // 主题模式
 
 
-setTimeout(()=>{
-    topic.send()
-},5000)
+// setTimeout(()=>{
+//     topic.send()
+// },5000)
 
-topic.receive()
+// topic.receive()
+
+// RPC 调用
+rpc.client()
+rpc.service()
